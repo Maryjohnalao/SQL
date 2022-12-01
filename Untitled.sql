@@ -52,5 +52,5 @@ SELECT * FROM producer where region = 'Sousse';
 SELECT SUM(quantity) FROM harvest  where num_wine= 12; 
 SELECT SUM (quantity), category from wine INNER JOIN harvest ON wine.num_wine = harvest.num_wine GROUP BY category;
 SELECT first_name, last_name FROM producer  INNER JOIN harvest ON producer.num_producer  = harvest.num_producer  where region = 'Sousse'  
-and num_wine > 1 OR quantity > 300 ORDER BY first_name, last_name; 
-SELECT * FROM harvest INNER JOIN wine ON harvest.num_wine =wine.num_wine where Degree > 12 AND num_producer =24 
+and num_wine >= 1 OR quantity > 300 ORDER BY first_name, last_name; 
+SELECT num_wine FROM harvest INNER JOIN wine ON harvest.num_wine =wine.num_wine where Degree > 12 AND num_producer =24 
